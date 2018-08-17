@@ -1,49 +1,52 @@
 const solution = (number) => {
-	//Comments
-	// The position of the integer is important: 
-	// 		It defines the output, eg. 1 in 1000 is M, 1 in 10 is X.
-
 	//Plan of action
-	// 1. Convert number to array
-	// 1.1 Reverse array ??
-	// 2. Save length of number
-	// The following point applies to an unreversed array
-	// 3. For 4 digits (x000):	
-	//		If number.length = 4 && number[0] == 1, return M
-	//		If number.length = 4 && number[0] == 2, return MM
-	//		If number.length = 4 && number[0] == 3, return MMM
-	//	For 3 digits (x00) :
-	//		If number.length = 3 && number[0] == 1, return C
-	//		If number.length = 3 && number[0] == 2, return CC
-	//		If number.length = 3 && number[0] == 3, return CCC
-	//		If number.length = 3 && number[0] == 4, return CD
-	//		If number.length = 3 && number[0] == 5, return D
-	//		If number.length = 3 && number[0] == 6, return DC
-	//		If number.length = 3 && number[0] == 7, return DCC
-	//		If number.length = 3 && number[0] == 8, return DCCC
-	//		If number.length = 3 && number[0] == 9, return CM
-	//	For 2 digits (x0) :
-	//		If number.length = 2 && number[0] == 1, return X
-	//		If number.length = 2 && number[0] == 2, return XX
-	//		If number.length = 2 && number[0] == 3, return XXX
-	//		If number.length = 2 && number[0] == 4, return XL
-	//		If number.length = 2 && number[0] == 5, return L
-	//		If number.length = 2 && number[0] == 6, return LX
-	//		If number.length = 2 && number[0] == 7, return LXX
-	//		If number.length = 2 && number[0] == 8, return LXXX
-	//		If number.length = 2 && number[0] == 9, return XC
-	//	For 1 digit (x) :
-	//		If number.length = 1 && number[0] == 1, return I
-	//		If number.length = 1 && number[0] == 2, return II
-	//		If number.length = 1 && number[0] == 3, return III
-	//		If number.length = 1 && number[0] == 4, return IV
-	//		If number.length = 1 && number[0] == 5, return V
-	//		If number.length = 1 && number[0] == 6, return VI
-	//		If number.length = 1 && number[0] == 7, return VII
-	//		If number.length = 1 && number[0] == 8, return VIII
-	//		If number.length = 1 && number[0] == 9, return IX
+	// 1. Convert number to array  with array.prototype.split('');
+	// 1.1 Reverse array with array.prototype.reverse();
+	const numberArray = number.split('').reverse();
+	const romanArray = numberArray.map((number, index) => {
+		if number
+	})
+	
+	// For 1 digit (x) :
+	// if number[0] == 1, return I
+	// if number[0] == 2, return II
+	// if number[0] == 3, return III
+	// if number[0] == 4, return IV
+	// if number[0] == 5, return V
+	// if number[0] == 6, return VI
+	// if number[0] == 7, return VII
+	// if number[0] == 8, return VIII
+	// if number[0] == 9, return IX
 
+	// For 2 digits (x0) :
+	// if number[1] == 1, return X
+	// if number[1] == 2, return XX
+	// if number[1] == 3, return XXX
+	// if number[1] == 4, return XL
+	// if number[1] == 5, return L
+	// if number[1] == 6, return LX
+	// if number[1] == 7, return LXX
+	// if number[1] == 8, return LXXX
+	// if number[1] == 9, return XC
 
+	// For 3 digits (x00) :
+	// if number[0] == 1, return C
+	// if number[0] == 2, return CC
+	// if number[0] == 3, return CCC
+	// if number[0] == 4, return CD
+	// if number[0] == 5, return D
+	// if number[0] == 6, return DC
+	// if number[0] == 7, return DCC
+	// if number[0] == 8, return DCCC
+	// if number[0] == 9, return CM
 
-	// Refactoring
+	// For 4 digits (x000):	
+	// if number[0] == 1, return M
+	// if number[0] == 2, return MM
+	// if number[0] == 3, return MMM
+
+	// 4. Reverse array with array.prototype.reverse
+	// 5. Join array with array.prototype.join('');
+	return numberArray.reverse().join('');
+
 }
